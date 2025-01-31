@@ -23,7 +23,6 @@ if uploaded_file:
 
     # Basic Dataset Info
     st.subheader("Dataset Information")
-    st.write("Dataset Info:")
     buffer = df.info(buf=None)
     st.text(buffer)
     st.write("Summary Statistics:")
