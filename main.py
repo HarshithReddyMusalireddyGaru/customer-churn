@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import io
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
@@ -22,9 +23,9 @@ if uploaded_file is not None:
 
     # Dataset Information
     st.subheader("Dataset Info")
-    buffer = []
+    buffer = io.StringIO()
     df.info(buf=buffer)
-    st.text("\n".join(buffer))
+    st.text(buffer.getvalue())
 
     # Summary Statistics
     st.subheader("Summary Statistics")
